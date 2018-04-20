@@ -178,6 +178,11 @@ def update(request,gid):
 
         
         ob = Goods.objects.get(id=gid)
+        old_picname = request.POST['old_picname']
+        #删除原来的旧的图片
+        os.remove("./static/goods/"+old_picname)
+        os.remove("./static/goods/s_"+old_picname)
+        os.remove("./static/goods/m_"+old_picname)
         ob.goods = request.POST['goods']
         ob.typeid = request.POST['typeid']
         ob.company = request.POST['company']
