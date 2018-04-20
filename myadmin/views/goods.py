@@ -148,8 +148,34 @@ def edit(request,gid):
 def update(request,gid):
     '''执行编辑信息'''
     try:
+        # 图片的上传处理
+        myfile = request.FILES.get("pic",None)
+        if not myfile:
+            return HttpResponse("没有上传文件信息")
+        filename = str(time.time())+"."+myfile.name.split('.').pop()
+        destination = open("./static/goods/"+filename,"wb+")
+        for chunk in myfile.chunks():      # 分块写入文件  
+            destination.write(chunk)  
+        destination.close()
+
+        # 图片的缩放
+        im = Image.open("./static/goods/"+filename)
+        # 缩放到375*375(缩放后的宽高比例不变):
+        im.thumbnail((375, 375)) 
+        im.save("./static/goods/"+filename,None)
+        
+        im = Image.open("./static/goods/"+filename)
+        # 缩放到220*220(缩放后的宽高比例不变):
+        im.thumbnail((220,220)) 
+        im.save("./static/goods/m_"+filename,None)
+
+        im = Image.open("./static/goods/"+filename)
+        # 缩放到75*75(缩放后的宽高比例不变):
+        im.thumbnail((75, 75)) 
+        im.save("./static/goods/s_"+filename,None)
+
+        
         ob = Goods.objects.get(id=gid)
-        ob.name = request.POST['name']
         ob.goods = request.POST['goods']
         ob.typeid = request.POST['typeid']
         ob.company = request.POST['company']
