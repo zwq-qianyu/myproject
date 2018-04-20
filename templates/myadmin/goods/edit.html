@@ -5,6 +5,7 @@
         商品信息管理
     </h3>
     <form id="edit-profile" action="{% url 'myadmin_goods_update' goods.id %}" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="old_picname" value="{{goods.picname}}">
         {% csrf_token %}
         <fieldset>
             <legend>查看/编辑商品信息</legend>
