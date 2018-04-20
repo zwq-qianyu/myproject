@@ -124,6 +124,8 @@ def delete(request,gid):
         ob = Goods.objects.get(id=gid)
         #执行图片删除
         os.remove("./static/goods/"+ob.picname)
+        os.remove("./static/goods/s_"+ob.picname)
+        os.remove("./static/goods/m_"+ob.picname)
         ob.delete()
         context={"info":"删除成功！"}
     except Exception as err:
