@@ -37,7 +37,7 @@ class Goods(models.Model):
     goods = models.CharField(max_length=32)
     company = models.CharField(max_length=50)
     content = models.TextField()
-    price = models.FloatField()
+    price = models.FloatField(max_length=100)
     picname = models.CharField(max_length=255)
     store = models.IntegerField(default=0)
     num = models.IntegerField(default=0)
@@ -46,7 +46,32 @@ class Goods(models.Model):
     addtime = models.DateTimeField(default=datetime.now)
 
     def toDict(self):
-        return {'id':self.id,'typeid':self.typeid,'goods':self.goods,'company':self.company,'price':self.price,'picname':self.picname,'store':self.store,'num':self.num,'clicknum':self.clicknum,'state':self.state}
+        return {'id':self.id,'typeid':self.typeid,'goods':self.goods,'company':self.company,'price':self.price,'picname':self.picname,'store':self.store,'num':self.num,'clicknum':self.clicknum,'state':self.state,'m':1}
 
     class Meta:
         db_table = "goods"  # 更改表名
+
+# 订单模型
+class Orders(models.Model):
+    uid = models.IntegerField()
+    linkman = models.CharField(max_length=32)
+    address = models.CharField(max_length=255)
+    code = models.CharField(max_length=6)
+    phone = models.CharField(max_length=16)
+    addtime = models.DateTimeField(default=datetime.now)
+    total = models.FloatField()
+    state = models.IntegerField()
+
+    class Meta:
+        db_table = "orders"  # 更改表名
+
+#订单详情模型
+class Detail(models.Model):
+    orderid = models.IntegerField()
+    goodsid = models.IntegerField()
+    name = models.CharField(max_length=32)
+    price = models.FloatField()
+    num = models.IntegerField()
+
+    class Meta:
+        db_table = "detail"  # 更改表名

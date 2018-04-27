@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from myadmin.views import index,users,type,goods
+from myadmin.views import index,users,type,goods,orders
 
 urlpatterns = [
     # 后台首页
@@ -38,4 +38,9 @@ urlpatterns = [
     url(r'^goods/edit/(?P<gid>[0-9]+)$', goods.edit, name="myadmin_goods_edit"),
     url(r'^goods/update/(?P<gid>[0-9]+)$', goods.update, name="myadmin_goods_update"),
 
+    #订单管理
+    url(r'^orders$', orders.index, name="myadmin_orders_index"),
+    url(r'^orders/(?P<pIndex>[0-9]+)$', orders.index, name="myadmin_orders_index"),
+    url(r'^orders/detail/(?P<oid>[0-9]+)$', orders.detail, name="myadmin_orders_detail"),
+    url(r'^orders/state$',orders.state, name="myadmin_orders_state"),
 ]
