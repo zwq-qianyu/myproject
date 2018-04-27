@@ -12,22 +12,22 @@ https://share.runtofuture.cn/zwq-projects/
 
 <br><br>
 <h2>b) 会员中心的个人信息浏览和编辑:</h2>
-<img src="./readme-pic/b1.png" style="display:block;width:50%;"></img>
-<img src="./readme-pic/b2.png" style="display:block;width:50%;"></img>
+<img src="./readmepic/b1.png" style="display:block;width:50%;"></img>
+<img src="./readmepic/b2.png" style="display:block;width:50%;"></img>
 
 <br><br>
 <h2>c) 会员重置密码:</h2>
-<img src="./readme-pic/c.png"></img>
+<img src="./readmepic/c.png"></img>
 
 <br><br>
 <h2>d）商城首页商品展示:（主页商品按照月销量降序排列，数码、服装和鲜花类别的商品获取所有相应类别的商品进行显示）</h2>
-<img src="./readme-pic/d1.png" style="display:block;width:25%;"></img>
-<img src="./readme-pic/d2.png" style="display:block;width:25%;"></img>
-<img src="./readme-pic/d3.png" style="display:block;width:25%;"></img>
-<img src="./readme-pic/d4.png" style="display:block;width:25%;"></img>
+<img src="./readmepic/d1.png" style="display:block;width:25%;"></img>
+<img src="./readmepic/d2.png" style="display:block;width:25%;"></img>
+<img src="./readmepic/d3.png" style="display:block;width:25%;"></img>
+<img src="./readmepic/d4.png" style="display:block;width:25%;"></img>
 <br>
 <h3>实现原理代码图示：</h3>
-<img src="./readme-pic/d5.png" style="display:block;width:25%;"></img>
+<img src="./readmepic/d5.png" style="display:block;width:25%;"></img>
 
 <br><br>
 <h3>
