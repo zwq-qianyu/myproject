@@ -8,7 +8,7 @@ https://share.runtofuture.cn/zwq-projects/
 
 <br>
 <h2>a) 会员前台注册，如图：</h2>
-<img src="./readme-pic/a.png"></img>
+<img src="./readmepic/a.png"></img>
 
 <br><br>
 <h2>b) 会员中心的个人信息浏览和编辑:</h2>
